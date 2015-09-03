@@ -1,10 +1,8 @@
-package me.nightsta69.beplus.me.nightsta69.beplus.commands;
+package me.nightsta69.beplus.commands;
 
 import me.nightsta69.beplus.SettingsManager;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
 /**
  * Created by Richard on 8/30/2015.

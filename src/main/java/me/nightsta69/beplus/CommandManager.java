@@ -1,11 +1,12 @@
 package me.nightsta69.beplus;
 
 
-import me.nightsta69.beplus.me.nightsta69.beplus.commands.*;
+import me.nightsta69.beplus.commands.*;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 

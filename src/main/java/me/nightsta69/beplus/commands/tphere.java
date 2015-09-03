@@ -1,4 +1,4 @@
-package me.nightsta69.beplus.me.nightsta69.beplus.commands;
+package me.nightsta69.beplus.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

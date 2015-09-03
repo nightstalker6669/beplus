@@ -1,4 +1,4 @@
-package me.nightsta69.beplus.me.nightsta69.beplus.commands;
+package me.nightsta69.beplus.commands;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 import me.nightsta69.beplus.SettingsManager;
@@ -35,6 +35,5 @@ public class proxiesend extends EcoCommand {
             out.writeUTF("Connect");
             out.writeUTF(args[1]);
             player.sendPluginMessage(SettingsManager.getInstance().getPlugin(), "BungeeCord", out.toByteArray());
-        return;
         }
 }
