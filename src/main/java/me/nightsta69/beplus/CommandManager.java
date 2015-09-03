@@ -1,14 +1,18 @@
 package me.nightsta69.beplus;
 
-
 import me.nightsta69.beplus.commands.*;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import static org.bukkit.Bukkit.getServer;
 
 /**
  * Created by Richard on 8/30/2015.
@@ -17,6 +21,7 @@ public class CommandManager implements CommandExecutor {
 
     private ArrayList<EcoCommand> cmds = new ArrayList<EcoCommand>();
     private ArrayList<EcoCommand> admcmds = new ArrayList<EcoCommand>();
+    private ArrayList<EcoCommand> spawncmds = new ArrayList<EcoCommand>();
 
     public CommandManager() {
         cmds.add(new Add());
@@ -26,6 +31,7 @@ public class CommandManager implements CommandExecutor {
         admcmds.add(new tphere());
         admcmds.add(new heal());
         admcmds.add(new proxiesend());
+        spawncmds.add(new setspawn());
 
     }
 
@@ -70,6 +76,46 @@ public class CommandManager implements CommandExecutor {
                 }
                 sender.sendMessage(ChatColor.RED + "Invalid Command");
             }
+        }
+        if(cmd.getName().equalsIgnoreCase("spawn")){
+            if(!(sender instanceof Player)) {
+                sender.sendMessage(ChatColor.RED + "You can not run this command as Console.");
+                return true;
+            }
+
+            Player p = (Player) sender;
+
+            Plugin config = SettingsManager.getInstance().getPlugin();
+
+            if (args.length == 0) {
+                if(config.getConfig().getConfigurationSection("spawn") == null) {
+                    getServer().getLogger().info("the spawn config is null!");
+                    return true;
+                }
+                //Bukkit.getServer().getLogger().info("sending " + p.getName() + " to spawn location!");
+                World w = getServer().getWorld(config.getConfig().getString("spawn.world"));
+                double x = config.getConfig().getDouble("spawn.x");
+                double y = config.getConfig().getDouble("spawn.y");
+                double z = config.getConfig().getDouble("spawn.z");
+                float yaw = config.getConfig().getInt("spawn.yaw");
+                float pitch = config.getConfig().getInt("spawn.pitch");
+                //Bukkit.getServer().getLogger().info("world:" + w + " X:" + x + " Y:" + y + " z:" + z + " yaw:" + yaw + " pitch:" + pitch);
+                Location location = new Location(w, x, y, z, yaw, pitch);
+                p.teleport(location);
+                return true;
+            }
+
+            ArrayList<String> b = new ArrayList<String>(Arrays.asList(args));
+            b.remove(0);
+
+            for (EcoCommand c : spawncmds) {
+                if (c.getName().equalsIgnoreCase(args[0])) {
+                    try {c.run(sender, b.toArray(new String[b.size()]));}
+                    catch (Exception e) {sender.sendMessage(ChatColor.RED + "An error has occurred"); e.printStackTrace(); }
+                    return true;
+                }
+            }
+            sender.sendMessage(ChatColor.RED + "Invalid Command");
         }
         return true;
     }

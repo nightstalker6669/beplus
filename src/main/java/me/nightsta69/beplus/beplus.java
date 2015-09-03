@@ -21,7 +21,8 @@ public class beplus extends JavaPlugin {
         CommandManager cm = new CommandManager();
         getCommand("money").setExecutor(cm);
         getCommand("admin").setExecutor(cm);
-            Bukkit.getPluginManager().registerEvents(new VotifierConnector(), this);
+        getCommand("spawn").setExecutor(cm);
+        Bukkit.getPluginManager().registerEvents(new VotifierConnector(), this);
 
         if (Bukkit.getServer().getPluginManager().getPlugin("Vault") != null) {
             Bukkit.getServer().getServicesManager().register(Economy.class, new VaultConnector(), this, ServicePriority.Highest);
