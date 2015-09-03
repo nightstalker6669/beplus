@@ -1,0 +1,34 @@
+name: beplus
+version: 1.0
+main: me.nightsta69.beplus.beplus
+description: multipurpose plugin
+
+commands:
+    money:
+        usage: /<command> <args> [opt args]
+        aliases: [money, balance, bal]
+        description: Shows balance.
+    admin:
+        usage: /<command> <args> [opt args]
+        aliases: [adm]
+        description: access the admin commands.
+
+permissions:
+    me.nightsta69.eco.add:
+        description: add to a players account.
+        default: op
+    me.nightsta69.eco.remove:
+            description: remove from a players account.
+            default: op
+    me.nightsta69.eco.pay:
+            description: pay a player.
+            default: op
+    me.nightsta69.admin.tp:
+                description: teleport to a player.
+                default: op
+    me.nightsta69.admin.tphere:
+                description: teleport a player to you.
+                default: op
+    me.nightsta69.admin.heal:
+                description: heals self or target.
+                default: op
