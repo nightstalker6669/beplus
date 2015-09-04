@@ -48,26 +48,37 @@ public class CommandManager implements CommandExecutor {
                 }
                 return true;
             }
+            if (args[0] == "?") {
+                for (EcoCommand c : cmds) {
+                    sender.sendMessage(ChatColor.GREEN + "[Economy] /money " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
+                }
+                return true;
+            }
 
             ArrayList<String> a = new ArrayList<String>(Arrays.asList(args));
             a.remove(0);
 
             for (EcoCommand c : cmds) {
                 if (c.getName().equalsIgnoreCase(args[0])) {
-                    try {c.run(sender, a.toArray(new String[a.size()]));}
-                    catch (Exception e) {sender.sendMessage(ChatColor.RED + "An error has occurred"); e.printStackTrace(); }
+                    try {c.run(sender, a.toArray(new String[a.size()]));} catch (Exception e) {
+                        sender.sendMessage(ChatColor.RED + "[Economy] An error has occurred");
+                        e.printStackTrace();
+                    }
                     return true;
                 }
             }
-            sender.sendMessage(ChatColor.RED + "Invalid Command");
+            sender.sendMessage(ChatColor.RED + "[Economy] Invalid Command");
         }
         if (cmd.getName().equalsIgnoreCase("admin")) {
                 if (!sender.hasPermission("me.nightsta69.admin")) {
                     sender.sendMessage(ChatColor.RED + "[Admin]" + "You don't have permission to use this command");
                     return false;
                 }
-            for (EcoCommand c : admcmds) {
-                sender.sendMessage("/admin " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
+            if (args.length == 0 || args[0] == "?") {
+                for (EcoCommand c : admcmds) {
+                    sender.sendMessage(ChatColor.GREEN + "[Admin] /admin " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
+                }
+                return true;
             }
                 ArrayList<String> b = new ArrayList<String>(Arrays.asList(args));
                 b.remove(0);
@@ -97,6 +108,12 @@ public class CommandManager implements CommandExecutor {
                 }
                 if (config.getConfig().getConfigurationSection("spawn") == null) {
                     getServer().getLogger().info("[Spawn] The spawn config is null!");
+                    return true;
+                }
+                if (args[0] == "?") {
+                    for (EcoCommand c : spawncmds) {
+                        sender.sendMessage(ChatColor.GREEN + "[Spawn] /spawn " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
+                    }
                     return true;
                 }
                 Player p = (Player) sender;
@@ -154,6 +171,13 @@ public class CommandManager implements CommandExecutor {
                 Set<String> warps = config.getConfig().getConfigurationSection("warp").getKeys(false);
                 for (String c : warps) {
                     sender.sendMessage(ChatColor.GREEN + " - " + c);
+                    return true;
+                }
+                return true;
+            }
+            if (args[0] == "?") {
+                for (EcoCommand c : cmds) {
+                    sender.sendMessage(ChatColor.GREEN + "[Warp] /warp " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
                 }
                 return true;
             }
