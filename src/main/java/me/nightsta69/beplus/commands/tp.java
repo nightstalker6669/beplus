@@ -19,17 +19,17 @@ public class tp extends EcoCommand {
             return;
         }
         if (args.length < 1) {
-            sender.sendMessage(ChatColor.RED + "You did not enter enough args." );
+            sender.sendMessage(ChatColor.RED + "[Admin] You did not enter enough args.");
             return;
         }
         Player p = (Player) sender;
         Player target = Bukkit.getServer().getPlayer(args[0]);
         if (target == null) {
-                p.sendMessage(ChatColor.RED + "Could not find player " + args[0] +"!");
+            p.sendMessage(ChatColor.RED + "[Admin] Could not find player " + args[0] + "!");
             return;
         }
         p.teleport(target.getLocation());
-        p.sendMessage(ChatColor.GREEN + "Teleporting you to " + target.getName());
+        p.sendMessage(ChatColor.GREEN + "[Admin] Teleporting you to " + target.getName());
     }
 }
 

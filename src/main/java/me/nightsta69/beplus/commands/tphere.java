@@ -19,17 +19,17 @@ public class tphere extends EcoCommand {
             return;
         }
         if (args.length < 1) {
-            sender.sendMessage(ChatColor.RED + "You did not enter enough args." );
+            sender.sendMessage(ChatColor.RED + "[Admin] You did not enter enough args.");
             return;
         }
         Player p = (Player) sender;
         Player target = Bukkit.getServer().getPlayer(args[0]);
         if (target == null) {
-                p.sendMessage(ChatColor.RED + "Could not find player " + args[0] +"!");
+            p.sendMessage(ChatColor.RED + "[Admin] Could not find player " + args[0] + "!");
             return;
         }
         target.teleport(p.getLocation());
-        target.sendMessage(ChatColor.RED + "You have been summoned by " + p.getName());
+        target.sendMessage(ChatColor.RED + "[Admin] You have been summoned by " + p.getName() + "!");
     }
 }
 
