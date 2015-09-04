@@ -17,7 +17,7 @@ public class VotifierConnector implements Listener{
     @EventHandler
     public void onPlayerVote(VotifierEvent e) {
         Vote v = e.getVote();
-        Bukkit.getServer().broadcastMessage(ChatColor.GREEN + v.getUsername() + " voted on " + v.getServiceName() + "!");
+        Bukkit.getServer().broadcastMessage(ChatColor.GREEN + "[Votifier]" + v.getUsername() + " voted on " + v.getServiceName() + "!");
         Player p = Bukkit.getServer().getPlayer(UUID.fromString(v.getUsername()));
         if (p == null) {
             return;

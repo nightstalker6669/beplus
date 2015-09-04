@@ -44,7 +44,7 @@ public class CommandManager implements CommandExecutor {
             if (args.length == 0) {
                 if (sender instanceof Player) {
                     Player p = (Player) sender;
-                    p.sendMessage(ChatColor.GREEN + "Your Balance is $" + SettingsManager.getInstance().getBalance(p.getName()));
+                    p.sendMessage(ChatColor.GREEN + "[Economy]" + "Your Balance is $" + SettingsManager.getInstance().getBalance(p.getName()));
                 }
                 return true;
             }
@@ -63,7 +63,7 @@ public class CommandManager implements CommandExecutor {
         }
         if (cmd.getName().equalsIgnoreCase("admin")) {
                 if (!sender.hasPermission("me.nightsta69.admin")) {
-                    sender.sendMessage(ChatColor.RED + "You don't have permission to use this command");
+                    sender.sendMessage(ChatColor.RED + "[Admin]" + "You don't have permission to use this command");
                     return false;
                 }
             for (EcoCommand c : admcmds) {
@@ -74,12 +74,16 @@ public class CommandManager implements CommandExecutor {
 
                 for (EcoCommand c : admcmds) {
                     if (c.getName().equalsIgnoreCase(args[0])) {
-                        try {c.run(sender, b.toArray(new String[b.size()]));}
-                        catch (Exception e) {sender.sendMessage(ChatColor.RED + "An error has occurred"); e.printStackTrace(); }
+                        try {
+                            c.run(sender, b.toArray(new String[b.size()]));
+                        } catch (Exception e) {
+                            sender.sendMessage(ChatColor.RED + "[Admin]" + "An error has occurred");
+                            e.printStackTrace();
+                        }
                         return true;
                     }
                 }
-                sender.sendMessage(ChatColor.RED + "Invalid Command");
+            sender.sendMessage(ChatColor.RED + "[Admin]" + "Invalid Command");
 
         }
         if (cmd.getName().equalsIgnoreCase("spawn")) {
@@ -88,11 +92,11 @@ public class CommandManager implements CommandExecutor {
 
             if (args.length == 0) {
                 if (!(sender instanceof Player)) {
-                    sender.sendMessage(ChatColor.RED + "You can not run this command as Console.");
+                    sender.sendMessage(ChatColor.RED + "[Spawn]" + "You can not run this command as Console.");
                     return true;
                 }
                 if (config.getConfig().getConfigurationSection("spawn") == null) {
-                    getServer().getLogger().info("the spawn config is null!");
+                    getServer().getLogger().info("[Spawn] The spawn config is null!");
                     return true;
                 }
                 Player p = (Player) sender;
@@ -110,7 +114,7 @@ public class CommandManager implements CommandExecutor {
             }
             if (Bukkit.getServer().getPlayer(args[0]) != null) {
                 if (!sender.hasPermission("me.nightsta69.admin.spawnother")) {
-                    sender.sendMessage(ChatColor.RED + "You don't have permission to use this command");
+                    sender.sendMessage(ChatColor.RED + "[Spawn] You don't have permission to use this command");
                     return false;
                 }
                 Player target = Bukkit.getServer().getPlayer(args[0]);
@@ -122,6 +126,7 @@ public class CommandManager implements CommandExecutor {
                 float pitch = config.getConfig().getInt("spawn.pitch");
                 //Bukkit.getServer().getLogger().info("world:" + w + " X:" + x + " Y:" + y + " z:" + z + " yaw:" + yaw + " pitch:" + pitch);
                 Location location = new Location(w, x, y, z, yaw, pitch);
+                target.sendMessage(ChatColor.GREEN + "[Spawn] You have been sent to spawn by " + sender.getName());
                 target.teleport(location);
                 return true;
             }
@@ -134,25 +139,18 @@ public class CommandManager implements CommandExecutor {
                     try {
                         c.run(sender, b.toArray(new String[b.size()]));
                     } catch (Exception e) {
-                        sender.sendMessage(ChatColor.RED + "An error has occurred");
+                        sender.sendMessage(ChatColor.RED + "[Spawn] An error has occurred");
                         e.printStackTrace();
                     }
                     return true;
                 }
             }
-            sender.sendMessage(ChatColor.RED + "Invalid Command");
+            sender.sendMessage(ChatColor.RED + "[Spawn] Invalid Command");
             return false;
         }
         if (cmd.getName().equalsIgnoreCase("warp")) {
-
-
-            if (!(sender instanceof Player)) {
-                sender.sendMessage(ChatColor.RED + "You can not run this command as Console.");
-                return true;
-            }
-
             if (args.length == 0) {
-                sender.sendMessage(ChatColor.GREEN + "current list of warps:");
+                sender.sendMessage(ChatColor.GREEN + "[Warp] Current list of warps:");
                 Set<String> warps = config.getConfig().getConfigurationSection("warp").getKeys(false);
                 for (String c : warps) {
                     sender.sendMessage(ChatColor.GREEN + " - " + c);
@@ -162,14 +160,12 @@ public class CommandManager implements CommandExecutor {
 
             if (args.length == 1) {
                 Player p = (Player) sender;
-                //Bukkit.getServer().getLogger().info("sending " + p.getName() + " to spawn location!");
                 World w = getServer().getWorld(config.getConfig().getString("warp." + args[0] + ".world"));
                 double x = config.getConfig().getDouble("warp." + args[0] + ".x");
                 double y = config.getConfig().getDouble("warp." + args[0] + ".y");
                 double z = config.getConfig().getDouble("warp." + args[0] + ".z");
                 float yaw = config.getConfig().getInt("warp." + args[0] + ".yaw");
                 float pitch = config.getConfig().getInt("warp." + args[0] + ".pitch");
-                //Bukkit.getServer().getLogger().info("world:" + w + " X:" + x + " Y:" + y + " z:" + z + " yaw:" + yaw + " pitch:" + pitch);
                 Location location = new Location(w, x, y, z, yaw, pitch);
                 p.teleport(location);
                 return true;
@@ -183,16 +179,14 @@ public class CommandManager implements CommandExecutor {
                     try {
                         c.run(sender, b.toArray(new String[b.size()]));
                     } catch (Exception e) {
-                        sender.sendMessage(ChatColor.RED + "An error has occurred");
+                        sender.sendMessage(ChatColor.RED + "[Warp] An error has occurred");
                         e.printStackTrace();
                     }
                     return true;
                 }
             }
         }
-
-
-        sender.sendMessage(ChatColor.RED + "Invalid Command");
+        sender.sendMessage(ChatColor.RED + "[BEPlus] Invalid Command");
         return false;
     }
 }
