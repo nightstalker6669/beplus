@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6181dc93-b71e-46a5-9fc6-1c8686a7db7d" name="Default" comment="added spawn commands">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/removewarp.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/setwarp.java" />
-      <change type="DELETED" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\me\nightsta69\beplus\commands\Add.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\me\nightsta69\beplus\commands\EcoCommand.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\me\nightsta69\beplus\commands\Pay.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\me\nightsta69\beplus\commands\Remove.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\me\nightsta69\beplus\commands\heal.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\me\nightsta69\beplus\commands\proxiesend.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\me\nightsta69\beplus\commands\tp.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\me\nightsta69\beplus\commands\tphere.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\CommandManager.class" afterPath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\CommandManager.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\beplus.class" afterPath="C:\Users\Richard\Documents\GitHub\beplus\target\classes\me\nightsta69\beplus\beplus.class" />
+    <list default="true" id="6181dc93-b71e-46a5-9fc6-1c8686a7db7d" name="Default" comment="added warp and other random stuff">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/Richard.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/me/nightsta69/beplus/CommandManager.class" afterPath="$PROJECT_DIR$/target/classes/me/nightsta69/beplus/CommandManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/unnamed/beplus.jar" afterPath="$PROJECT_DIR$/out/artifacts/unnamed/beplus.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/CommandManager.java" afterPath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/CommandManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/Pay.java" afterPath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/Pay.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/beplus.iml" afterPath="$PROJECT_DIR$/beplus.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/beplus.java" afterPath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/beplus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/plugin.yml" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/proxiesend.java" afterPath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/proxiesend.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/setspawn.java" afterPath="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/setspawn.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="beplus.iws" />
@@ -88,21 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommandManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CommandManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/CommandManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
+            <state vertical-scroll-proportion="-2.6678083">
+              <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#667#679#0" expanded="true" />
-                <element signature="e#740#752#0" expanded="true" />
-                <element signature="e#815#827#0" expanded="true" />
-                <element signature="e#889#901#0" expanded="true" />
-                <element signature="e#1834#1842#0" expanded="true" />
-                <element signature="e#2841#2849#0" expanded="true" />
-                <element signature="e#5998#6006#0" expanded="true" />
-                <element signature="e#8420#8428#0" expanded="true" />
+                <element signature="e#668#680#0" expanded="true" />
+                <element signature="e#741#753#0" expanded="true" />
+                <element signature="e#816#828#0" expanded="true" />
+                <element signature="e#890#902#0" expanded="true" />
+                <element signature="e#1835#1843#0" expanded="true" />
+                <element signature="e#2832#2840#0" expanded="true" />
+                <element signature="e#5990#5998#0" expanded="true" />
+                <element signature="e#8305#8313#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/setwarp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="34" column="97" selection-start-line="34" selection-start-column="97" selection-end-line="34" selection-end-column="97" />
+              <caret line="35" column="92" selection-start-line="35" selection-start-column="92" selection-end-line="35" selection-end-column="92" />
               <folding>
                 <element signature="e#328#329#0" expanded="true" />
                 <element signature="e#386#387#0" expanded="true" />
@@ -131,10 +114,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.52895755">
+            <state vertical-scroll-proportion="0.0">
               <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding />
             </state>
@@ -214,11 +197,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/Pay.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/proxiesend.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/CommandManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/removewarp.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/setspawn.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/setwarp.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/EcoCommand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/CommandManager.java" />
       </list>
     </option>
   </component>
@@ -524,7 +507,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441323697036</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added warp and other random stuff">
+      <created>1441338983326</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1441338983326</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -542,12 +531,12 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32893288" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32673267" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32673267" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39933994" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933994" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -579,8 +568,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactored commands" />
     <MESSAGE value="added spawn commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="added spawn commands" />
+    <MESSAGE value="added warp and other random stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="added warp and other random stuff" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -666,14 +658,14 @@
           <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#667#679#0" expanded="true" />
-            <element signature="e#740#752#0" expanded="true" />
-            <element signature="e#815#827#0" expanded="true" />
-            <element signature="e#889#901#0" expanded="true" />
-            <element signature="e#1834#1842#0" expanded="true" />
-            <element signature="e#2841#2849#0" expanded="true" />
-            <element signature="e#5998#6006#0" expanded="true" />
-            <element signature="e#8420#8428#0" expanded="true" />
+            <element signature="e#668#680#0" expanded="true" />
+            <element signature="e#741#753#0" expanded="true" />
+            <element signature="e#816#828#0" expanded="true" />
+            <element signature="e#890#902#0" expanded="true" />
+            <element signature="e#1835#1843#0" expanded="true" />
+            <element signature="e#2832#2840#0" expanded="true" />
+            <element signature="e#5990#5998#0" expanded="true" />
+            <element signature="e#8305#8313#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -776,14 +768,14 @@
           <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#667#679#0" expanded="true" />
-            <element signature="e#740#752#0" expanded="true" />
-            <element signature="e#815#827#0" expanded="true" />
-            <element signature="e#889#901#0" expanded="true" />
-            <element signature="e#1834#1842#0" expanded="true" />
-            <element signature="e#2841#2849#0" expanded="true" />
-            <element signature="e#5998#6006#0" expanded="true" />
-            <element signature="e#8420#8428#0" expanded="true" />
+            <element signature="e#668#680#0" expanded="true" />
+            <element signature="e#741#753#0" expanded="true" />
+            <element signature="e#816#828#0" expanded="true" />
+            <element signature="e#890#902#0" expanded="true" />
+            <element signature="e#1835#1843#0" expanded="true" />
+            <element signature="e#2832#2840#0" expanded="true" />
+            <element signature="e#5990#5998#0" expanded="true" />
+            <element signature="e#8305#8313#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -963,7 +955,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/commands/setwarp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="97" selection-start-line="34" selection-start-column="97" selection-end-line="34" selection-end-column="97" />
+          <caret line="35" column="92" selection-start-line="35" selection-start-column="92" selection-end-line="35" selection-end-column="92" />
           <folding>
             <element signature="e#328#329#0" expanded="true" />
             <element signature="e#386#387#0" expanded="true" />
@@ -978,24 +970,6 @@
           <folding>
             <element signature="e#440#441#0" expanded="true" />
             <element signature="e#467#468#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/CommandManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#667#679#0" expanded="true" />
-            <element signature="e#740#752#0" expanded="true" />
-            <element signature="e#815#827#0" expanded="true" />
-            <element signature="e#889#901#0" expanded="true" />
-            <element signature="e#1834#1842#0" expanded="true" />
-            <element signature="e#2841#2849#0" expanded="true" />
-            <element signature="e#5998#6006#0" expanded="true" />
-            <element signature="e#8420#8428#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1044,9 +1018,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52895755">
+        <state vertical-scroll-proportion="0.0">
           <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/CommandManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6678083">
+          <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#668#680#0" expanded="true" />
+            <element signature="e#741#753#0" expanded="true" />
+            <element signature="e#816#828#0" expanded="true" />
+            <element signature="e#890#902#0" expanded="true" />
+            <element signature="e#1835#1843#0" expanded="true" />
+            <element signature="e#2832#2840#0" expanded="true" />
+            <element signature="e#5990#5998#0" expanded="true" />
+            <element signature="e#8305#8313#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

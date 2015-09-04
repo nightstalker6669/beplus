@@ -67,7 +67,7 @@ public class CommandManager implements CommandExecutor {
                     return false;
                 }
             for (EcoCommand c : admcmds) {
-                sender.sendMessage("/eco " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
+                sender.sendMessage("/admin " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
             }
                 ArrayList<String> b = new ArrayList<String>(Arrays.asList(args));
                 b.remove(0);
