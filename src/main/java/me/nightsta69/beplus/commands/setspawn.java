@@ -33,8 +33,5 @@ public class setspawn extends EcoCommand {
             config.getConfig().set("spawn.pitch", p.getLocation().getPitch());
             config.saveConfig();
             sender.sendMessage(ChatColor.GREEN + "Spawn has been set!");
-            return;
-
-
     }
 }

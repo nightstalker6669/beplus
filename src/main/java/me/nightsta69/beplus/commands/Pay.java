@@ -31,7 +31,7 @@ public class Pay extends EcoCommand {
             sender.sendMessage(ChatColor.RED + "Invalid Number");
             return;
         }
-        if(SettingsManager.getInstance().payBalance(name, receiver, amt) == false) {
+        if (!SettingsManager.getInstance().payBalance(name, receiver, amt)) {
            sender.sendMessage(ChatColor.RED +  "Insufficient Funds!");
             return;
         }

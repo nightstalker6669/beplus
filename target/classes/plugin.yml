@@ -12,7 +12,14 @@ commands:
         usage: /<command> <args> [opt args]
         aliases: [adm]
         description: access the admin commands.
-
+    spawn:
+        usage: /<command> <args>
+        aliases: [spawn]
+        description: send to spawn/access spawn commands.
+    warp:
+        usage: /<command> <args>
+        aliases: [warp]
+        description: access to warp commands.
 permissions:
     me.nightsta69.eco.add:
         description: add to a players account.
@@ -32,3 +39,12 @@ permissions:
     me.nightsta69.admin.heal:
                 description: heals self or target.
                 default: op
+    me.nightsta69.admin.proxiesend:
+                    description: send player to server.
+                    default: op
+    me.nightsta69.spawn.setspawn:
+                    description: sets server spawn.
+                    default: op
+    me.nightsta69.admin.warp:
+                    description: sets warps.
+                    default: op

@@ -22,6 +22,7 @@ public class beplus extends JavaPlugin {
         getCommand("money").setExecutor(cm);
         getCommand("admin").setExecutor(cm);
         getCommand("spawn").setExecutor(cm);
+        getCommand("warp").setExecutor(cm);
         Bukkit.getPluginManager().registerEvents(new VotifierConnector(), this);
 
         if (Bukkit.getServer().getPluginManager().getPlugin("Vault") != null) {

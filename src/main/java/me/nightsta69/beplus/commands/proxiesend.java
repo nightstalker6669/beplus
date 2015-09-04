@@ -21,14 +21,23 @@ public class proxiesend extends EcoCommand {
             return;
         }
         if (args.length < 2) {
-            sender.sendMessage(ChatColor.RED + "You did not enter enough args." );
-            return;
+            if (sender instanceof Player) {
+                sender.sendMessage(ChatColor.RED + "You did not enter enough args.");
+                return;
+            } else {
+                Bukkit.getServer().getLogger().info("You did not enter enough args.");
+                return;
+            }
         }
-        Player p = (Player) sender;
         Player ptarget = Bukkit.getServer().getPlayer(args[0]);
         if (ptarget == null) {
-            p.sendMessage(ChatColor.RED + "Could not find player " + args[0] +"!");
-            return;
+            if (sender instanceof Player) {
+                Player p = (Player) sender;
+                p.sendMessage(ChatColor.RED + "Could not find player " + args[0] + "!");
+            } else {
+                Bukkit.getServer().getLogger().info("Could not find player " + args[0] + "!");
+                return;
+            }
         }
         Player player = Bukkit.getServer().getPlayer(args[0]);
             ByteArrayDataOutput out = ByteStreams.newDataOutput();
