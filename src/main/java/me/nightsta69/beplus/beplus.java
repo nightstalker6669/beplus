@@ -23,6 +23,7 @@ public class beplus extends JavaPlugin {
             Bukkit.getServer().getLogger().info("[Economy] Vault found, registering Economy.");
             Bukkit.getServer().getServicesManager().register(Economy.class, new VaultConnector(), this, ServicePriority.Highest);
         } else {
+            Bukkit.getServer().getLogger().severe("[Economy] Vault not found!");
 
         }
         Bukkit.getServer().getLogger().info("[Votifier] Checking for Votifier.");
@@ -41,6 +42,8 @@ public class beplus extends JavaPlugin {
         getCommand("spawn").setExecutor(cm);
         Bukkit.getServer().getLogger().info("[Warp] Register Warp Commands.");
         getCommand("warp").setExecutor(cm);
+        Bukkit.getServer().getLogger().info("[Votifier] Register Vote Commands.");
+        getCommand("vote").setExecutor(cm);
         Bukkit.getServer().getLogger().info("[BungeeCord] Registering Outgoing BungeeCord Channel.");
         Bukkit.getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
     }

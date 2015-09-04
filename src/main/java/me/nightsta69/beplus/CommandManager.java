@@ -1,6 +1,7 @@
 package me.nightsta69.beplus;
 
 import me.nightsta69.beplus.commands.*;
+import mkremins.fanciful.FancyMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -25,6 +26,9 @@ public class CommandManager implements CommandExecutor {
     private ArrayList<EcoCommand> admcmds = new ArrayList<EcoCommand>();
     private ArrayList<EcoCommand> spawncmds = new ArrayList<EcoCommand>();
     private ArrayList<EcoCommand> warpcmds = new ArrayList<EcoCommand>();
+    private ArrayList<EcoCommand> votecmds = new ArrayList<EcoCommand>();
+
+
     public CommandManager() {
         cmds.add(new Add());
         cmds.add(new Remove());
@@ -36,6 +40,8 @@ public class CommandManager implements CommandExecutor {
         spawncmds.add(new setspawn());
         warpcmds.add(new setwarp());
         warpcmds.add(new removewarp());
+        votecmds.add(new voteadd());
+        votecmds.add(new voteremove());
 
     }
 
@@ -44,7 +50,7 @@ public class CommandManager implements CommandExecutor {
             if (args.length == 0) {
                 if (sender instanceof Player) {
                     Player p = (Player) sender;
-                    p.sendMessage(ChatColor.GREEN + "[Economy]" + "Your Balance is $" + SettingsManager.getInstance().getBalance(p.getName()));
+                    p.sendMessage(ChatColor.GREEN + "[Economy] " + "Your Balance is $" + SettingsManager.getInstance().getBalance(p.getName()));
                 }
                 return true;
             }
@@ -73,12 +79,9 @@ public class CommandManager implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("admin")) {
                 if (!sender.hasPermission("me.nightsta69.admin")) {
                     sender.sendMessage(ChatColor.RED + "[Admin]" + "You don't have permission to use this command");
-                    return false;
+                    return true;
                 }
             if ((args.length == 0) || args[0].equals("?")) {
-                if (!sender.hasPermission("me.nightsta69.admin")) {
-                    return false;
-                }
                 for (EcoCommand c : admcmds) {
                     sender.sendMessage(ChatColor.GREEN + "[Admin] /admin " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
                 }
@@ -92,14 +95,14 @@ public class CommandManager implements CommandExecutor {
                         try {
                             c.run(sender, b.toArray(new String[b.size()]));
                         } catch (Exception e) {
-                            sender.sendMessage(ChatColor.RED + "[Admin]" + "An error has occurred");
+                            sender.sendMessage(ChatColor.RED + "[Admin] " + "An error has occurred");
                             e.printStackTrace();
                         }
                         return true;
                     }
                 }
-            sender.sendMessage(ChatColor.RED + "[Admin]" + "Invalid Command");
-            return false;
+            sender.sendMessage(ChatColor.RED + "[Admin] " + "Invalid Command");
+            return true;
 
         }
         if (cmd.getName().equalsIgnoreCase("spawn")) {
@@ -108,7 +111,7 @@ public class CommandManager implements CommandExecutor {
 
             if (args.length == 0) {
                 if (!(sender instanceof Player)) {
-                    sender.sendMessage(ChatColor.RED + "[Spawn]" + "You can not run this command as Console.");
+                    sender.sendMessage(ChatColor.RED + "[Spawn] " + "You can not run this command as Console.");
                     return true;
                 }
                 if (config.getConfig().getConfigurationSection("spawn") == null) {
@@ -129,7 +132,7 @@ public class CommandManager implements CommandExecutor {
             }
             if (args[0].equals("?")) {
                 if (!sender.hasPermission("me.nightsta69.admin")) {
-                    return false;
+                    return true;
                 }
                 for (EcoCommand c : spawncmds) {
                     sender.sendMessage(ChatColor.GREEN + "[Spawn] /spawn " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
@@ -139,12 +142,12 @@ public class CommandManager implements CommandExecutor {
             if (Bukkit.getServer().getPlayer(args[0]) != null) {
                 if (!sender.hasPermission("me.nightsta69.admin.spawnother")) {
                     sender.sendMessage(ChatColor.RED + "[Spawn] You don't have permission to use this command");
-                    return false;
+                    return true;
                 }
                 Player target = Bukkit.getServer().getPlayer(args[0]);
                 if (target == null) {
                     sender.sendMessage(ChatColor.RED + "[Admin] Could not find player " + args[0] + "!");
-                    return false;
+                    return true;
                 }
                 World w = getServer().getWorld(config.getConfig().getString("spawn.world"));
                 double x = config.getConfig().getDouble("spawn.x");
@@ -173,7 +176,7 @@ public class CommandManager implements CommandExecutor {
                 }
             }
             sender.sendMessage(ChatColor.RED + "[Spawn] Invalid Command");
-            return false;
+            return true;
         }
         if (cmd.getName().equalsIgnoreCase("warp")) {
             if (args.length == 0) {
@@ -187,7 +190,7 @@ public class CommandManager implements CommandExecutor {
             }
             if (args[0].equals("?")) {
                 if (!sender.hasPermission("me.nightsta69.admin")) {
-                    return false;
+                    return true;
                 }
                 for (EcoCommand c : warpcmds) {
                     sender.sendMessage(ChatColor.GREEN + "[Warp] /warp " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
@@ -222,8 +225,40 @@ public class CommandManager implements CommandExecutor {
                     return true;
                 }
             }
+            sender.sendMessage(ChatColor.RED + "[Warp] Invalid Command");
+            return true;
+        }
+        if (cmd.getName().equalsIgnoreCase("vote")) {
+            if (args.length == 0) {
+                sender.sendMessage(ChatColor.GREEN + "[Votifier] Current list of Voting sites:");
+
+                Set<String> votes = config.getConfig().getConfigurationSection("vote").getKeys(true);
+                for (String c : votes) {
+                    String b = config.getConfig().getString("vote." + c);
+                    new FancyMessage(" - " + c)
+                            .color(ChatColor.GOLD)
+                            .link(b).send(sender);
+                }
+                return true;
+            }
+            ArrayList<String> b = new ArrayList<String>(Arrays.asList(args));
+            b.remove(0);
+
+            for (EcoCommand c : votecmds) {
+                if (c.getName().equalsIgnoreCase(args[0])) {
+                    try {
+                        c.run(sender, b.toArray(new String[b.size()]));
+                    } catch (Exception e) {
+                        sender.sendMessage(ChatColor.RED + "[Votifier] An error has occurred");
+                        e.printStackTrace();
+                    }
+                    return true;
+                }
+            }
+            sender.sendMessage(ChatColor.RED + "[Votifier] Invalid Command");
+            return true;
         }
         sender.sendMessage(ChatColor.RED + "[BEPlus] Invalid Command");
-        return false;
+        return true;
     }
 }

@@ -20,6 +20,11 @@ commands:
         usage: /<command> <args>
         aliases: [warp]
         description: access to warp commands.
+    vote:
+        usage: /<command> <args> [opt args]
+        aliases: [vote]
+        description: Access to voting sites.
+
 permissions:
     me.nightsta69.eco.add:
         description: add to a players account.
