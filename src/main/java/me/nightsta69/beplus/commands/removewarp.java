@@ -17,19 +17,19 @@ public class removewarp extends EcoCommand {
     public void run(CommandSender sender, String[] args) {
         Plugin config = SettingsManager.getInstance().getPlugin();
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED + "You can not run this command as Console.");
+            sender.sendMessage(ChatColor.RED + "[Warp] You can not run this command as Console.");
             return;
         }
         if (!sender.hasPermission("me.nightsta69.admin.setwarp")) {
-            sender.sendMessage(ChatColor.RED + "You do not have permission to do this!");
+            sender.sendMessage(ChatColor.RED + "[Warp] You do not have permission to do this!");
             return;
         }
         if (!config.getConfig().isSet("warp." + args[0])) {
-            sender.sendMessage(args[0] + " does not exist!");
+            sender.sendMessage("[Warp] " + args[0] + " does not exist!");
             return;
         }
         config.getConfig().set("warp." + args[0], null);
         config.saveConfig();
-        sender.sendMessage(ChatColor.GREEN + "warp location " + args[0] + " has been removed!");
+        sender.sendMessage(ChatColor.GREEN + "[Warp] warp location " + args[0] + " has been removed!");
     }
 }

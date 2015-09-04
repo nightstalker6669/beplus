@@ -18,7 +18,7 @@ public class Pay extends EcoCommand {
 
     public void run(CommandSender sender, String[] args) {
         if (args.length < 2) {
-            sender.sendMessage(ChatColor.RED + "You did not enter enough args." );
+            sender.sendMessage(ChatColor.RED + "[Economy] You did not enter enough args.");
             return;
         }
         Player p = (Player) sender;
@@ -28,16 +28,16 @@ public class Pay extends EcoCommand {
 
         try { amt = Double.parseDouble(args[1]);}
         catch (Exception e) {
-            sender.sendMessage(ChatColor.RED + "Invalid Number");
+            sender.sendMessage(ChatColor.RED + "[Economy] Invalid Number");
             return;
         }
         if (!SettingsManager.getInstance().payBalance(name, receiver, amt)) {
-           sender.sendMessage(ChatColor.RED +  "Insufficient Funds!");
+            sender.sendMessage(ChatColor.RED + "[Economy] Insufficient Funds!");
             return;
         }
         Player target = Bukkit.getServer().getPlayer(args[0]);
-        sender.sendMessage(ChatColor.GREEN + "You paid $" + amt + " to " + receiver + ". You now have $" + SettingsManager.getInstance().getBalance(name) +".");
-        target.sendMessage(ChatColor.GREEN + p.getName() + "paid you " + amt +".");
+        sender.sendMessage(ChatColor.GREEN + "[Economy] You paid $" + amt + " to " + receiver + ". You now have $" + SettingsManager.getInstance().getBalance(name) + ".");
+        target.sendMessage(ChatColor.GREEN + "[Economy] " + p.getName() + "paid you " + amt + ".");
 
 
     }

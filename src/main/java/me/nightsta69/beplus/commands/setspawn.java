@@ -16,13 +16,13 @@ public class setspawn extends EcoCommand {
     public void run(CommandSender sender, String[] args) {
         Plugin config = SettingsManager.getInstance().getPlugin();
         if(!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.RED + "You can not run this command as Console.");
+            sender.sendMessage(ChatColor.RED + "[Spawn] You can not run this command as Console.");
             return;
         }
         Player p = (Player) sender;
 
             if(!sender.hasPermission("me.nightsta69.spawn.setspawn")){
-                sender.sendMessage(ChatColor.RED + "You do not have permission to do this!");
+                sender.sendMessage(ChatColor.RED + "[Spawn] You do not have permission to do this!");
                 return;
             }
             config.getConfig().set("spawn.world", p.getLocation().getWorld().getName());
@@ -32,6 +32,6 @@ public class setspawn extends EcoCommand {
             config.getConfig().set("spawn.yaw", p.getLocation().getYaw());
             config.getConfig().set("spawn.pitch", p.getLocation().getPitch());
             config.saveConfig();
-            sender.sendMessage(ChatColor.GREEN + "Spawn has been set!");
+        sender.sendMessage(ChatColor.GREEN + "[Spawn] Spawn has been set!");
     }
 }

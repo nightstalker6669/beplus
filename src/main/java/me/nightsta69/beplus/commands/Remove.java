@@ -16,11 +16,11 @@ public class Remove extends EcoCommand {
 
     public void run(CommandSender sender, String[] args) {
         if(!sender.hasPermission("me.nightsta69.eco.remove")) {
-            sender.sendMessage(ChatColor.RED + "You don't have permission to use this command");
+            sender.sendMessage(ChatColor.RED + "[Economy] You don't have permission to use this command");
             return;
         }
         if (args.length < 2) {
-            sender.sendMessage(ChatColor.RED + "You did not enter enough args." );
+            sender.sendMessage(ChatColor.RED + "[Economy] You did not enter enough args.");
             return;
         }
         String name = args[0];
@@ -28,11 +28,11 @@ public class Remove extends EcoCommand {
 
         try { amt = Double.parseDouble(args[1]);}
         catch (Exception e) {
-            sender.sendMessage(ChatColor.RED + "Invalid Number");
+            sender.sendMessage(ChatColor.RED + "[Economy] Invalid Number");
             return;
         }
         SettingsManager.getInstance().removeBalance(name, amt);
-        sender.sendMessage(ChatColor.GREEN + "Removed $" + amt + " from " + name + ". They now have $" + SettingsManager.getInstance().getBalance(name) +".");
+        sender.sendMessage(ChatColor.GREEN + "[Economy] Removed $" + amt + " from " + name + ". They now have $" + SettingsManager.getInstance().getBalance(name) + ".");
 
     }
 }

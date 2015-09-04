@@ -23,7 +23,7 @@ public class heal extends EcoCommand {
         if (args.length < 1) {
             Player p = (Player) sender;
             p.setHealth(20);
-            p.sendMessage(ChatColor.GREEN + "You have been healed!");
+            p.sendMessage(ChatColor.GREEN + "[Admin] You have been healed!");
             return;
         }
         Player p = (Player) sender;
@@ -32,12 +32,12 @@ public class heal extends EcoCommand {
         Player fromUUID = Bukkit.getServer().getPlayer(UUID.fromString(uuid));
 
         if (fromUUID == null) {
-                p.sendMessage(ChatColor.RED + "Could not find player " + args[0] +"!");
+            p.sendMessage(ChatColor.RED + "[Admin] Could not find player " + args[0] + "!");
             return;
         }
         fromUUID.setHealth(20);
-        p.sendMessage(ChatColor.GREEN + "You healed " + fromUUID.getName() + "!");
-        fromUUID.sendMessage(ChatColor.GREEN + "You have been healed by " + p.getName());
+        p.sendMessage(ChatColor.GREEN + "[Admin] You healed " + fromUUID.getName() + "!");
+        fromUUID.sendMessage(ChatColor.GREEN + "[Admin] You have been healed by " + p.getName());
     }
 }
 
