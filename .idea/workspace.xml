@@ -43,8 +43,8 @@
       <file leaf-file-name="CommandManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/CommandManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.99486303">
-              <caret line="140" column="33" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+            <state vertical-scroll-proportion="-0.23287672">
+              <caret line="190" column="17" selection-start-line="190" selection-start-column="17" selection-end-line="190" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#668#680#0" expanded="true" />
@@ -52,9 +52,9 @@
                 <element signature="e#816#828#0" expanded="true" />
                 <element signature="e#890#902#0" expanded="true" />
                 <element signature="e#2135#2143#0" expanded="true" />
-                <element signature="e#3381#3389#0" expanded="true" />
-                <element signature="e#6939#6947#0" expanded="true" />
-                <element signature="e#9161#9169#0" expanded="true" />
+                <element signature="e#3501#3509#0" expanded="true" />
+                <element signature="e#7179#7187#0" expanded="true" />
+                <element signature="e#9521#9529#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -499,7 +499,13 @@
       <option name="project" value="LOCAL" />
       <updated>1441379715330</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="more clean up">
+      <created>1441381272228</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1441381272228</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -675,9 +681,9 @@
             <element signature="e#816#828#0" expanded="true" />
             <element signature="e#890#902#0" expanded="true" />
             <element signature="e#2135#2143#0" expanded="true" />
-            <element signature="e#3381#3389#0" expanded="true" />
-            <element signature="e#6939#6947#0" expanded="true" />
-            <element signature="e#9161#9169#0" expanded="true" />
+            <element signature="e#3501#3509#0" expanded="true" />
+            <element signature="e#7179#7187#0" expanded="true" />
+            <element signature="e#9521#9529#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -783,9 +789,9 @@
             <element signature="e#816#828#0" expanded="true" />
             <element signature="e#890#902#0" expanded="true" />
             <element signature="e#2135#2143#0" expanded="true" />
-            <element signature="e#3381#3389#0" expanded="true" />
-            <element signature="e#6939#6947#0" expanded="true" />
-            <element signature="e#9161#9169#0" expanded="true" />
+            <element signature="e#3501#3509#0" expanded="true" />
+            <element signature="e#7179#7187#0" expanded="true" />
+            <element signature="e#9521#9529#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1026,8 +1032,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/nightsta69/beplus/CommandManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.99486303">
-          <caret line="140" column="33" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+        <state vertical-scroll-proportion="-0.23287672">
+          <caret line="190" column="17" selection-start-line="190" selection-start-column="17" selection-end-line="190" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#668#680#0" expanded="true" />
@@ -1035,9 +1041,9 @@
             <element signature="e#816#828#0" expanded="true" />
             <element signature="e#890#902#0" expanded="true" />
             <element signature="e#2135#2143#0" expanded="true" />
-            <element signature="e#3381#3389#0" expanded="true" />
-            <element signature="e#6939#6947#0" expanded="true" />
-            <element signature="e#9161#9169#0" expanded="true" />
+            <element signature="e#3501#3509#0" expanded="true" />
+            <element signature="e#7179#7187#0" expanded="true" />
+            <element signature="e#9521#9529#0" expanded="true" />
           </folding>
         </state>
       </provider>

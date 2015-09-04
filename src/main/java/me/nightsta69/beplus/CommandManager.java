@@ -76,6 +76,9 @@ public class CommandManager implements CommandExecutor {
                     return false;
                 }
             if ((args.length == 0) || args[0].equals("?")) {
+                if (!sender.hasPermission("me.nightsta69.admin")) {
+                    return false;
+                }
                 for (EcoCommand c : admcmds) {
                     sender.sendMessage(ChatColor.GREEN + "[Admin] /admin " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
                 }
@@ -125,6 +128,9 @@ public class CommandManager implements CommandExecutor {
                 return true;
             }
             if (args[0].equals("?")) {
+                if (!sender.hasPermission("me.nightsta69.admin")) {
+                    return false;
+                }
                 for (EcoCommand c : spawncmds) {
                     sender.sendMessage(ChatColor.GREEN + "[Spawn] /spawn " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
                 }
@@ -180,6 +186,9 @@ public class CommandManager implements CommandExecutor {
                 return true;
             }
             if (args[0].equals("?")) {
+                if (!sender.hasPermission("me.nightsta69.admin")) {
+                    return false;
+                }
                 for (EcoCommand c : warpcmds) {
                     sender.sendMessage(ChatColor.GREEN + "[Warp] /warp " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
                 }
