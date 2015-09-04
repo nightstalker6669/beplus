@@ -235,9 +235,11 @@ public class CommandManager implements CommandExecutor {
                 Set<String> votes = config.getConfig().getConfigurationSection("vote").getKeys(true);
                 for (String c : votes) {
                     String b = config.getConfig().getString("vote." + c);
-                    new FancyMessage(" - " + c)
+                    new FancyMessage(" - " + ChatColor.UNDERLINE + c)
                             .color(ChatColor.GOLD)
-                            .link(b).send(sender);
+                            .link(b)
+                            .tooltip(b)
+                            .send(sender);
                 }
                 return true;
             }
