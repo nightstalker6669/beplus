@@ -48,7 +48,7 @@ public class CommandManager implements CommandExecutor {
                 }
                 return true;
             }
-            if (args[0] == "?") {
+            if (args[0].equals("?")) {
                 for (EcoCommand c : cmds) {
                     sender.sendMessage(ChatColor.GREEN + "[Economy] /money " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
                 }
@@ -68,13 +68,14 @@ public class CommandManager implements CommandExecutor {
                 }
             }
             sender.sendMessage(ChatColor.RED + "[Economy] Invalid Command");
+            return false;
         }
         if (cmd.getName().equalsIgnoreCase("admin")) {
                 if (!sender.hasPermission("me.nightsta69.admin")) {
                     sender.sendMessage(ChatColor.RED + "[Admin]" + "You don't have permission to use this command");
                     return false;
                 }
-            if (args.length == 0 || args[0] == "?") {
+            if ((args.length == 0) || args[0].equals("?")) {
                 for (EcoCommand c : admcmds) {
                     sender.sendMessage(ChatColor.GREEN + "[Admin] /admin " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
                 }
@@ -95,6 +96,7 @@ public class CommandManager implements CommandExecutor {
                     }
                 }
             sender.sendMessage(ChatColor.RED + "[Admin]" + "Invalid Command");
+            return false;
 
         }
         if (cmd.getName().equalsIgnoreCase("spawn")) {
@@ -110,23 +112,22 @@ public class CommandManager implements CommandExecutor {
                     getServer().getLogger().info("[Spawn] The spawn config is null!");
                     return true;
                 }
-                if (args[0] == "?") {
-                    for (EcoCommand c : spawncmds) {
-                        sender.sendMessage(ChatColor.GREEN + "[Spawn] /spawn " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
-                    }
-                    return true;
-                }
+
                 Player p = (Player) sender;
-                //Bukkit.getServer().getLogger().info("sending " + p.getName() + " to spawn location!");
                 World w = getServer().getWorld(config.getConfig().getString("spawn.world"));
                 double x = config.getConfig().getDouble("spawn.x");
                 double y = config.getConfig().getDouble("spawn.y");
                 double z = config.getConfig().getDouble("spawn.z");
                 float yaw = config.getConfig().getInt("spawn.yaw");
                 float pitch = config.getConfig().getInt("spawn.pitch");
-                //Bukkit.getServer().getLogger().info("world:" + w + " X:" + x + " Y:" + y + " z:" + z + " yaw:" + yaw + " pitch:" + pitch);
                 Location location = new Location(w, x, y, z, yaw, pitch);
                 p.teleport(location);
+                return true;
+            }
+            if (args[0].equals("?")) {
+                for (EcoCommand c : spawncmds) {
+                    sender.sendMessage(ChatColor.GREEN + "[Spawn] /spawn " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
+                }
                 return true;
             }
             if (Bukkit.getServer().getPlayer(args[0]) != null) {
@@ -135,13 +136,16 @@ public class CommandManager implements CommandExecutor {
                     return false;
                 }
                 Player target = Bukkit.getServer().getPlayer(args[0]);
+                if (target == null) {
+                    sender.sendMessage(ChatColor.RED + "[Admin] Could not find player " + args[0] + "!");
+                    return false;
+                }
                 World w = getServer().getWorld(config.getConfig().getString("spawn.world"));
                 double x = config.getConfig().getDouble("spawn.x");
                 double y = config.getConfig().getDouble("spawn.y");
                 double z = config.getConfig().getDouble("spawn.z");
                 float yaw = config.getConfig().getInt("spawn.yaw");
                 float pitch = config.getConfig().getInt("spawn.pitch");
-                //Bukkit.getServer().getLogger().info("world:" + w + " X:" + x + " Y:" + y + " z:" + z + " yaw:" + yaw + " pitch:" + pitch);
                 Location location = new Location(w, x, y, z, yaw, pitch);
                 target.sendMessage(ChatColor.GREEN + "[Spawn] You have been sent to spawn by " + sender.getName());
                 target.teleport(location);
@@ -175,8 +179,8 @@ public class CommandManager implements CommandExecutor {
                 }
                 return true;
             }
-            if (args[0] == "?") {
-                for (EcoCommand c : cmds) {
+            if (args[0].equals("?")) {
+                for (EcoCommand c : warpcmds) {
                     sender.sendMessage(ChatColor.GREEN + "[Warp] /warp " + c.getName() + " " + c.getArgs() + " - " + c.getDescription());
                 }
                 return true;
